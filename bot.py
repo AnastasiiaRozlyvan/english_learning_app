@@ -35,7 +35,7 @@ async def get_keyboard() -> types.InlineKeyboardMarkup:
 
 
 @dp.message_handler(commands='start')
-async def cmd_start(message: types.Message):
+async def start_command(message: types.Message):
     await fast_api_client.post("users", {"name": message.from_user.username})
     await message.reply(
         'What topic would you like to learn?',
