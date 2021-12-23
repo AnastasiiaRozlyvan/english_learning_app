@@ -9,5 +9,5 @@ async def write_users():
 
 
 @router.get("/exercises/{word}", tags=["exercises"])
-async def read_exercise(username: str):
+async def read_exercise(word: str):
     return {}  # ToDo
