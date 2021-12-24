@@ -1,4 +1,5 @@
 import aiohttp
+
 from config import FASTAPI_APP_HOST
 
 

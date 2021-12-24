@@ -1,8 +1,10 @@
+from uuid import uuid4
+
 from fastapi import APIRouter, Depends, Request
 from sqlalchemy.orm import Session
-from app.routers.utils import get_db
+
 from app.models.models import User
-from uuid import uuid4
+from app.routers.utils import get_db
 
 router = APIRouter()
 

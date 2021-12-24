@@ -6,8 +6,8 @@ from aiogram.contrib.middlewares.logging import LoggingMiddleware
 from aiogram.utils.callback_data import CallbackData
 from aiogram.utils.executor import start_webhook
 
-from fastapiclient import FastAPIClient
 from config import SECRET, WEBHOOK_URL, WEBHOOK_PATH, WEBAPP_HOST, WEBAPP_PORT
+from fastapiclient import FastAPIClient
 
 bot = Bot(token=SECRET, parse_mode=types.ParseMode.HTML)
 storage = MemoryStorage()
