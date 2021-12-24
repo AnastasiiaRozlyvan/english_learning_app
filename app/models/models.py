@@ -11,7 +11,7 @@ class User(Base):
         UUID(as_uuid=True), primary_key=True, index=True, default=uuid4
     )
     name = Column(String, index=True)
-    phone = Column(String, unique=True, index=True)
+    chat_id = Column(Integer, unique=True, index=True)
 
 
 class Topic(Base):

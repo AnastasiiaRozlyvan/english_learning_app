@@ -6,7 +6,7 @@ from aiogram.contrib.middlewares.logging import LoggingMiddleware
 from aiogram.utils.callback_data import CallbackData
 from aiogram.utils.executor import start_webhook
 
-from client import Client
+from fastapiclient import FastAPIClient
 from config import SECRET, WEBHOOK_URL, WEBHOOK_PATH, WEBAPP_HOST, WEBAPP_PORT
 
 bot = Bot(token=SECRET, parse_mode=types.ParseMode.HTML)
@@ -15,7 +15,7 @@ dp = Dispatcher(bot, storage=storage)
 dp.middleware.setup(LoggingMiddleware())
 
 topics_cb = CallbackData('topic', 'id', 'action')
-fast_api_client = Client()
+fast_api_client = FastAPIClient()
 
 
 async def get_keyboard() -> types.InlineKeyboardMarkup:

@@ -2,7 +2,7 @@ import aiohttp
 from config import FASTAPI_APP_HOST
 
 
-class Client:
+class FastAPIClient:
     def __init__(self):
         self.host = FASTAPI_APP_HOST
 
