@@ -1,4 +1,4 @@
-from app.models.database import SessionLocal
+from src.app.models.database import SessionLocal
 
 
 def get_db():

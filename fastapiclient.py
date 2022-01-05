@@ -15,8 +15,6 @@ class FastAPIClient:
 
     async def post(self, endpoint, json):
         async with aiohttp.ClientSession() as session:
-            async with session.post(
-                    f"{self.host}/{endpoint}/", json=json
-            ) as resp:
+            async with session.post(f"{self.host}/{endpoint}/", json=json) as resp:
                 response = await resp.json(content_type=None)
                 return response

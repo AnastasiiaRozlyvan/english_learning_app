@@ -10,4 +10,4 @@ async def save_word_progress():
 
 @router.get("/words/{word}", tags=["words"])
 async def read_word_progress(word: str):
-    return {}   # ToDo
+    return {}  # ToDo
