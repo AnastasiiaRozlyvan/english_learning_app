@@ -37,12 +37,15 @@ async def get_keyboard() -> types.InlineKeyboardMarkup:
 async def start_command(message: types.Message):
     await fast_api_client.post("users", {"name": message.from_user.username})
     await message.reply(
-        "What topic would you like to learn?", reply_markup=await get_keyboard()
+        "What topic would you like to learn?",
+        reply_markup=await get_keyboard()
     )
 
 
 @dp.callback_query_handler(topics_cb.filter(action="learn"))
-async def query_learn(query: types.CallbackQuery, callback_data: typing.Dict[str, str]):
+async def query_learn(
+        query: types.CallbackQuery, callback_data: typing.Dict[str, str]
+):
     topic = callback_data["id"].lower()
 
     text = (
