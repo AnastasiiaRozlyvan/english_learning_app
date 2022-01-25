@@ -1,15 +1,20 @@
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, Request
 from sqlalchemy.orm import Session
 
+from src.app.api.routers.utils import get_db
 from src.app.models.models import Topic
-from src.app.routers.utils import get_db
+from src.app.repositories.topics_repo import TopicRepo
 
 router = APIRouter()
 
 
 @router.post("/topics/", tags=["topics"])
-async def save_topics():
-    return []  # ToDo
+async def save_topics(request: Request, db: Session = Depends(get_db)):
+    json = await request.json()
+    topic = TopicRepo()
+    name = json["name"]
+    await topic.create(name, db)
+    return {"name": name}
 
 
 @router.get("/topics/{topic}", tags=["topics"])
