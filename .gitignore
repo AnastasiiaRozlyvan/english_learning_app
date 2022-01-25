@@ -1,0 +1,14 @@
+# macOS
+.DS_Store
+
+# PyCharm
+.idea/
+
+# Python
+__pycache__/
+
+# MyPy
+.mypy_cache
+
+# Alembic
+alembic.ini
